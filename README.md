@@ -1,0 +1,1 @@
+# uin24a2_resource_layout_kihl
