@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root{
+    --font: "Montserrat", sans-serif;
+    --darkblue: #2A324B;
+    --blue: #58699D;
+    --lightgrey: #E1E5EE;
+    --white: #fff;
+}
+
+body{
+    font-family: var(--font);
+    background-color: var(--lightgrey);
+}
+
+/*Navigasjonsbaren*/
+header nav ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 3rem 0 0 0;
+}
+
+header nav ul li{
+    background-color: var(--darkblue);
+    color: var(--white);
+    padding: 1.5rem 2.5rem;
+    margin: 0 0.5rem;
+}
+
+main{
+    min-height: 1500px;
+    display: flex;
+    justify-content: center;
+}
+
+main article{
+    max-width: 80%;
+    background-color: var(--white);
+    height: fit-content;
+    padding: 2rem;
+}
