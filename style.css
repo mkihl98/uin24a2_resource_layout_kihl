@@ -13,9 +13,10 @@ body{
     background-color: var(--lightgrey);
 }
 
-/*Navigasjonsbaren*/
+/*Navigasjonsbaren:*/
 nav{
     margin: 0 auto;
+    max-width: 75%;
 }
 
 nav ul{
@@ -34,13 +35,13 @@ nav ul li{
     cursor: pointer;
 }
 
+/*Main-området:*/
 main{
-    /*min-height: 1500px;*/
     display: flex;
     justify-content: center;
     justify-self: center;
     flex-wrap: wrap;
-    max-width: 80%;
+    max-width: 75%;
     background-color: var(--white);
     height: fit-content;
     padding: 2rem;

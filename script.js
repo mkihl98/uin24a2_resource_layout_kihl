@@ -1,7 +1,10 @@
+/*Kjører funksjonen addResource() når nettsiden lastes inn med parameteren "HTML",
+slik at HTML-ressursene er synlige med en gang man åpner nettsiden:*/
 document.addEventListener("DOMContentLoaded", addResource('HTML'))
 
 console.log(resources)
 
+/*Oppretter en variabel som skal inneholde menyen (navigasjonsbaren) på siden:*/
 let menuHTML = "<ul>"
 
 resources.map(resource => menuHTML += 
@@ -32,15 +35,3 @@ function addResource(title) {
     const main = document.getElementsByTagName("main")
     main[0].innerHTML = resourcesHTML
 }
-
-
-/*`<article>
-        <h2>${resource.category}</h2>
-        <p>${resource.text}</p>
-        <ul>
-            <li><a href="${resource.sources.url}">${resource.sources.title}</a></li>
-            <li><a href="${resource.url}">${resource.title}</a></li>
-            <li><a href="${resource.url}">${resource.title}</a></li>
-        </ul>
-    </article>`
-*/
