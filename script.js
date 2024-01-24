@@ -34,4 +34,16 @@ function addResource(title) {
 
     const main = document.getElementsByTagName("main")
     main[0].innerHTML = resourcesHTML
+
+    addClass(title)
+}
+
+function addClass(title) {
+    const resourceType = document.getElementsByTagName("li")
+
+    if(resourceType.classList.contains("active") === true) {
+        resourceType.classList.remove("active")
+    } else {
+        resourceType.classList.add("active")
+    }
 }
