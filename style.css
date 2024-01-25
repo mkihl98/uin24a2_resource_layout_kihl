@@ -22,7 +22,7 @@ nav{
 nav ul{
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 0;
     margin: 3rem 0 0 0;
 }
@@ -33,6 +33,12 @@ nav ul li{
     padding: 1.5rem 2.5rem;
     margin: 0 0.5rem;
     cursor: pointer;
+}
+
+/*Bakgrunnsfarge og skriftfarge for aktivt listepunkt:*/
+.active{
+    background-color: var(--white);
+    color: var(--darkblue);
 }
 
 /*Main-området:*/
