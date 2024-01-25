@@ -2,11 +2,11 @@
 console.log(resources)
 
 /*Oppretter en variabel som skal inneholde menyen (navigasjonsbaren) på siden:*/
-let menuHTML = "<ul>"
+let menuHTML = "<ul id='menulist'>"
 
 /*map()-er gjennom ressurs-arrayen og legger til et listepunkt (menypunkt) i variabelen menuHTML for hver kategori:*/
 resources.map(resource => menuHTML += 
-    `<li class="active" onClick="addResource('${resource.category}')">${resource.category}</li>`
+    `<li class="btn" onClick="addResource('${resource.category}')">${resource.category}</li>`
 )
 
 /*Henter <nav>-taggen og skriver ut innholdet i menuHTML til denne taggen:*/
@@ -34,7 +34,7 @@ function addResource(title) {
         /*map()-er gjennom dem allerede map()-ede arrayen for å nå fram til arrayen sources som ligger inne i resources-arrayen.
         Legger til en <li>-tagg med URL og tittel for hver ressurs i variabelen listHTML:*/
         element.sources.map(e => listHTML +=
-            `<li"><a href="${e.url}">${e.title}</a></li>`
+            `<li><a href="${e.url}">${e.title}</a></li>`
         )
     })
 
@@ -48,7 +48,28 @@ function addResource(title) {
 med en gang man åpner nettsiden:*/
 addResource('HTML')
 
-function addClass(title) {
+/*Kode for å legge til klassen "active" på et listeelement i navigasjonsmenyen når listeelementet klikkes på.
+Her har jeg brukt W3Schools til hjelp, ettersom jeg slet med å få til denne biten: https://www.w3schools.com/howto/howto_js_active_element.asp 
+Menypunktet som er aktivt når siden først lastes inn blir ikke markert, man må trykke på et menypunkt for at det skal markeres:*/
+let listContainer = document.getElementById("menulist")
+
+let lists = listContainer.getElementsByClassName("btn")
+
+/*For-løkke som legger til klassen "active" når et av menypunktene klikkes på:*/
+for (let teller = 0; teller < lists.length; teller++) {
+    lists[teller].addEventListener("click", function() {
+        const current = document.getElementsByClassName("active")
+
+        /*Erstatter "active"-klassen med ingen klasse, slik at umarkerte menypunkter går tilbake til å ha mørkeblå bakgrunnsfarge:*/
+        if(current.length > 0) {
+            current[0].className = current[0].className.replace("active", "")
+        }
+
+        this.className += " active"
+    })
+}
+
+/*function addClass(active) {
     const resourceType = document.getElementsByTagName("li")
 
     if(resourceType.classList.contains("active") === true) {
@@ -56,4 +77,4 @@ function addClass(title) {
     } else {
         resourceType.classList.add("active")
     }
-}
+}*/

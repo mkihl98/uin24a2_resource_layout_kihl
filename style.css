@@ -16,13 +16,14 @@ body{
 /*Navigasjonsbaren:*/
 nav{
     margin: 0 auto;
-    max-width: 75%;
+    max-width: 1000px;
 }
 
 nav ul{
     list-style-type: none;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 0;
     margin: 3rem 0 0 0;
 }
@@ -30,9 +31,10 @@ nav ul{
 nav ul li{
     background-color: var(--darkblue);
     color: var(--white);
-    padding: 1.5rem 2.5rem;
-    margin: 0 0.5rem;
+    padding: 1.3rem 3rem;
+    margin: 0.5rem 0.5rem 0 0.5rem;
     cursor: pointer;
+    font-weight: 700;
 }
 
 /*Bakgrunnsfarge og skriftfarge for aktivt listepunkt:*/
@@ -44,10 +46,10 @@ nav ul li{
 /*Main-området:*/
 main{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     justify-self: center;
     flex-wrap: wrap;
-    max-width: 75%;
+    max-width: 920px;
     background-color: var(--white);
     height: fit-content;
     padding: 2rem;
@@ -62,6 +64,6 @@ main p{
     width: 100%;
 }
 
-main ul{
-    list-style-type: none;
+main ul li{
+    width: 100%;
 }
